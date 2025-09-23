@@ -183,7 +183,7 @@ export const getAnalytics = async (req, res) => {
       }
     });
 
-    // 3️⃣ Prepare expense distribution array with percentage values
+    // Prepare expense distribution array with percentage values
     const expenseArray = Object.entries(expenseByCategory).map(([name, obj]) => ({
       name,
       amount: obj.amount,
@@ -191,13 +191,13 @@ export const getAnalytics = async (req, res) => {
       value: totalExpenses > 0 ? Number(((obj.amount / totalExpenses) * 100).toFixed(1)) : 0
     }));
 
-    // 4️⃣ Calculate savings & rate
+    // Calculate savings & rate
     const netSavings = totalIncome - totalExpenses;
     const savingsRate = totalIncome > 0
       ? Math.round((netSavings / totalIncome) * 100)
       : 0;
 
-    // 5️⃣ Response payload
+    // Response payload
     const payload = {
       year: Number(year),
       month: month || null,
