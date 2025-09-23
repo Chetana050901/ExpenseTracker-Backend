@@ -23,7 +23,6 @@ RESTful API backend for the **Expense Tracker** application, built with **Node.j
 - **JWT** – JSON Web Tokens for authentication  
 - **bcryptjs** – Password hashing  
 - **Multer** – File upload handling  
-- **Helmet** – Security middleware  
 
 ---
 
