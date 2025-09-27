@@ -54,8 +54,7 @@ export const registerUser = async (req, res) => {
         profileImage: req.file ? `/uploads/${req.file.filename}` : undefined,
       });
 
-      const token = createToken(user._id);
-      res.status(201).json({ message: 'User registered successfully', user, token });
+      res.status(201).json({ message: 'User registered successfully', user });
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: 'Server error', error: error.message });
@@ -83,5 +82,6 @@ export const loginUser = async (req, res) => {
     res.status(500).json({ message: 'Server error', error: err.message });
   }
 };
+
 
 
